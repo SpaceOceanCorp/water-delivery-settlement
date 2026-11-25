@@ -1,9 +1,10 @@
 # Export-control self-assessment: water-delivery-settlement
 
-**DRAFT for review.** Self-assessment by SpaceOcean Finance Inc., 25 November 2026, against 22 CFR parts
-120 and 121 (ITAR) and 15 CFR parts 734, 742, 772 and 774 (EAR). Check every citation against the
-current eCFR before sign-off. This is not a legal opinion or a government determination. Re-check it
-whenever the code, the data in it, or its users change.
+**Status: signed.** Self-assessment by SpaceOcean Finance Inc., 25 November 2026. The
+citations were checked on 25 November 2026 against the eCFR (title 22 current to 23 November 2026;
+title 15 as displayed that day): 22 CFR 120.33, 120.41 and 121.1 (ITAR); 15 CFR 734.7, 742.15,
+772.1 and Supplement No. 1 to part 774 (EAR). This is not a legal opinion or a government
+determination. Re-check it whenever the code, the data in it, or its users change.
 
 ## What this repository is
 
@@ -15,18 +16,21 @@ goods. The quality limits, prices and amounts in the repository are made up for 
 a water standard. Records carry numbers, keys, account addresses and hashes; the only free-text field
 is an order id.
 
+The repository is hosted at github.com/SpaceOceanCorp/water-delivery-settlement.
+
 ## ITAR (22 CFR 120 to 130)
 
 - **Not a defense article.** Nothing here is a spacecraft or spacecraft part described in USML
-  Category XV, and the software does not operate one.
+  Category XV (22 CFR 121.1), and the software does not operate one.
 - **Not technical data (22 CFR 120.33).** It contains no information required for the design,
-  development, production, operation, repair, testing or modification of a defense article. The
-  descriptions of water delivery in the README and code are general system descriptions, which
-  120.33(b) excludes.
-- **Software is not "specially designed" (22 CFR 120.41).** It was developed as general-purpose
-  payment and record software for commercial deliveries, in space and on Earth, with no knowledge of
-  use in or with a particular defense article, so 120.41(b)(4) and (b)(5) apply. This file, the
-  README and the commit history are the contemporaneous records that Note 2 to 120.41(b) asks for.
+  development, production, manufacture, assembly, operation, repair, testing, maintenance or
+  modification of a defense article. Its descriptions of water delivery are basic information on
+  function or purpose and general system descriptions, which 120.33(b) excludes.
+- **Software is not "specially designed" (22 CFR 120.41).** It is not software for use in or with a
+  defense article. In any case it was developed as general-purpose payment and record software, with
+  no knowledge of use in or with a particular commodity or type of commodity, so 120.41(b)(5)
+  applies. This file, the README and the commit history are the contemporaneous documents that
+  Note 2 to paragraph (b) of 120.41 requires.
 - **No defense services.** Using or sharing this software does not by itself give anyone assistance
   with a defense article.
 
@@ -34,7 +38,8 @@ is an order id.
 
 - **Not 9D515 or 9E515.** It is not software or technology specially designed or required for the
   development, production, operation, installation, maintenance or repair of a 9A515 spacecraft. The
-  "specially designed" releases in 15 CFR 772.1(b)(4), (b)(5) and (b)(6) apply for the reasons above.
+  general-purpose release in paragraph (b)(5) of the "specially designed" definition in 15 CFR 772.1
+  applies for the reasons above.
 - **Encryption: not 5A002 or 5D002.** The repository uses cryptography only for digital signatures
   (Ed25519), hashing (SHA-256 record ids) and hash-based escrow conditions (PREIMAGE-SHA-256), all
   through Node's built-in crypto and the xrpl.js library's transaction signing. The Technical Note to
@@ -42,9 +47,9 @@ is an order id.
   confidentiality". The repository encrypts no data. Network connections to the XRP Ledger use TLS
   provided by the Node.js runtime; the repository adds no encryption of its own.
 - **Classification while private: EAR99.** Subject to the EAR, on no ECCN.
-- **If published:** software made publicly available without restriction is "published" under
-  15 CFR 734.7(a) and is no longer subject to the EAR. Publication is a separate decision by SpaceOcean
-  Finance Inc., made after this assessment is signed off.
+- **If published:** software made available to the public without restriction, including by posting
+  it on a public website, is "published" under 15 CFR 734.7(a) and is no longer subject to the EAR.
+  Publication is a separate decision by SpaceOcean Finance Inc., made after this assessment is signed.
 
 ## Sharing with outside parties
 
@@ -73,8 +78,10 @@ is an order id.
 - adding a new record type or data field, or real (not example) limits
 - adding a delay-tolerant networking (Bundle Protocol) transport. Keep it general-purpose, not built
   for a particular spacecraft or program. If it adds encryption for confidentiality (for example
-  BPSec confidentiality), review it against 5A002 and 5D002, and check whether publishing it needs a
-  notification under 15 CFR 742.15(b)
+  BPSec confidentiality), that code falls under ECCN 5D002. Publicly available 5D002 source code is
+  not subject to the EAR under 15 CFR 742.15(b)(1), but if it uses non-standard cryptography,
+  742.15(b)(2) requires an email notice of its internet location to crypt@bis.doc.gov and
+  enc@nsa.gov. Published 5D002 object code stays subject to the EAR unless 734.7(b) is met
 - using mainnet or real customers. Sanctions screening of counterparties is a separate check
 - making the repository public
 
@@ -82,6 +89,6 @@ is an order id.
 
 | Role | Name | Date |
 |---|---|---|
-| Prepared by | | |
-| Reviewed by (counsel or export-control officer) | | |
-| Decision to publish | | |
+| Prepared by | Paul S Mamakos | 11/25/2026 |
+| Reviewed by (empowered official) | Paul S Mamakos | 11/25/2026 |
+| Decision to publish | Paul S Mamakos | 11/25/2026 |
