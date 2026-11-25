@@ -1,0 +1,19 @@
+{
+  "name": "water-delivery-settlement",
+  "version": "0.1.0",
+  "description": "Water delivery paid from an XRP Ledger token escrow, released only by a checked, signed receipt. Testnet demo.",
+  "scripts": {
+    "test": "node --test test.mjs",
+    "demo": "node demo.mjs"
+  },
+  "author": "SpaceOcean Finance Inc.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "dependencies": {
+    "xrpl": "5.3.0"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  }
+}
